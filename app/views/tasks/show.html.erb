@@ -2,7 +2,7 @@
 <p>タスク名</p>
 <p><%= @task.title %></p>
 <p>内容</p>
-<p><%= @task.content %></p>
+<p><%= safe_join(@task.content.split("\n"),tag(:br)) %></p>
 <p>終了期限</p>
 <p><%= @task.time_limit %></p>
 
