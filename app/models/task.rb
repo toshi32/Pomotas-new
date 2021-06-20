@@ -4,4 +4,5 @@ class Task < ApplicationRecord
   validates :time_limit, presence: true
   has_many :labellings, dependent: :destroy
   has_many :labels, through: :labellings
+  belongs_to :user
 end
