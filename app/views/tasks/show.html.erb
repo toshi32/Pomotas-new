@@ -1,0 +1,11 @@
+<h1>タスク詳細画面</h1>
+<p>タスク名</p>
+<p><%= @task.title %></p>
+<p>内容</p>
+<p><%= safe_join(@task.content.split("\n"),tag(:br)) %></p>
+<p>終了期限</p>
+<p><%= @task.time_limit %></p>
+<p><% @task.labels.each do |label| %>
+  <%= label.name %>
+  <% end %></p>
+<p><%= link_to 'Back', tasks_path(@task) %></p>
