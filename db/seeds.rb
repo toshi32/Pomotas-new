@@ -8,7 +8,9 @@
 
 Label.create!(
   [
-    {name: '学習'},
+    {name: '午前'},
+    {name: '午後'},
+    {name: '勉強'},
     {name: '仕事'},
     {name: '会議'},
     {name: '約束'},
@@ -16,7 +18,5 @@ Label.create!(
     {name: 'デート'},
     {name: '食事'},
     {name: '運動'},
-    {name: '午前'},
-    {name: '午後'}
   ]
 )
