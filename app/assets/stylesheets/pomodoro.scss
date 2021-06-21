@@ -1,71 +1,128 @@
-// $color-lg: #ffb76b;
-
+html,
 body {
-  height: 100vh;
-  // background-color: lighten(#ffb76b, 12%);
-  font-family: "Raleway", sans-serif;
-  font-size: 1.2em;
-  // color: darken(#ffb76b, 40%);
+  color: #9e9e9e;
+  background-color: #efefef;
+  font-family: "Roboto", sans-serif;
 }
-.container {
-  padding-top: 30px;
-  margin: 0 auto;
+
+#maintitle {
+  margin-bottom: 50px;
+  padding: 10px;
+  background-color: #3f51b5;
+  color: #fff;
+  font-size: 40px;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16),
+    0px 2px 10px 0px rgba(0, 0, 0, 0.12);
+}
+#cHolder {
+  max-width: 500px;
+  margin: auto;
+}
+#cBreak {
+  max-width: 150px;
+  padding: 20px;
+}
+#cWork {
+  max-width: 150px;
+  padding: 20px;
+}
+
+.inner_holder {
+  margin: auto;
+  overflow: auto;
+  width: 350px;
+}
+.cbut {
+  background: none;
+  border: none;
+}
+
+#clock {
+  padding: 20px;
+  padding-top: 40px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.26);
+  max-width: 500px;
+  margin: auto;
+  border-radius: 2px;
+  background-color: #fff;
+  font-size: 150px;
+  transition: all 0.2s ease;
+}
+
+#clock:hover {
+  -webkit-box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+}
+
+#clock.inactive {
+  color: #9e9e9e;
+}
+.work-time {
+  color: #e91e63;
+}
+.break-time {
+  color: green;
+}
+
+#clock b {
+  font-size: 20px;
+}
+
+.accent {
+  background-color: #e91e63;
+}
+
+.center {
   text-align: center;
 }
 
-.wrap-time {
-  margin: 40px auto 15px;
-  padding-top: 20px;
-  width: 360px;
-  background: #ffb76b; /* Old browsers */
-  background: -moz-linear-gradient(
-    top,
-    #ffb76b 23%,
-    #ff7f04 100%
-  ); /* FF3.6-15 */
-  background: -webkit-linear-gradient(
-    top,
-    #ffb76b 23%,
-    #ff7f04 100%
-  ); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #ffb76b 23%, #ff7f04 100%);
-  border-radius: 5px;
-  -webkit-box-shadow: 6px 6px 22px -9px rgba(0, 0, 0, 0.68);
-  -moz-box-shadow: 6px 6px 22px -9px rgba(0, 0, 0, 0.68);
-  box-shadow: 6px 6px 22px -9px rgba(0, 0, 0, 0.68);
-  text-align: center;
-  color: white;
-
-  .row {
-    margin: 0 auto 0;
-    padding: 30px 10px 30px;
-  }
-}
-// .col-span {
-//   cursor: pointer;
-//   heigth: 100%;
-// }
-.timer {
-  font-size: 7em;
-  cursor: pointer;
-}
-.start-btn,
-.reset-btn {
-  margin: 0px auto 20px;
-  cursor: pointer;
-  border: 1px solid white;
-  padding: 5px 15px;
-  border-radius: 5px;
-  &:hover {
-    background-color: white;
-    color: #ffb76b;
-  }
+.top-space {
+  margin-top: 20px;
+  text-align: right;
 }
 
-.copy {
-  color: darken(#ffb76b, 20%);
-  font-size: 0.8em;
-  a {
-    color: darken(#ffb76b, 40%);
-  }
+.floating-button {
+  position: absolute;
+  bottom: 20px;
+  right: 5%;
+}
+
+.pop-down {
+  margin-bottom: -35px;
+}
+
+.round-button {
+  color: #fff;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.26);
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.round-button:active {
+  width: 60px;
+  height: 60px;
+  background-color: #c2185b;
+}
+
+.round-button:hover {
+  width: 80px;
+  height: 80px;
+  margin-top: -10px;
+}
+
+.fa-fw {
+  width: 2em;
+  color: #badfff;
+}
+
+.fa-fw:hover {
+  color: #fff;
 }
