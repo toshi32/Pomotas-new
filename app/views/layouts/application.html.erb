@@ -17,6 +17,7 @@
     <% end %>
     <% if user_signed_in? %>
       <%= link_to "Task List", tasks_path %>
+      <%= link_to "管理者page", rails_admin_path %>
       <%= link_to "My Page", user_path(current_user.id) %>
       <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
     <% else %>
