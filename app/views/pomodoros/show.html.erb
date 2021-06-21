@@ -1,0 +1,25 @@
+<div class="container text-center">
+  <div class="wrapper">
+    <h5>POMODORO TIMER</h5>
+  </div>
+  <div class="wrap-time text-center">
+    <div class="msg">&nbsp;</div>
+    <div class="timer"><span class="minutes">25</span>:<span class="seconds">00</span></div>
+    <div class="row">
+      <div class="col col-xs-4">
+        <span class="col-span">BREAK:</span><br/>
+        <span class="col-span operatorB">+</span><br/>
+        <span class="col-span breakT">5</span><br/>
+        <span class="col-span operatorB">-</span>
+      </div>
+      <div class="col col-xs-4"><div class="start-btn">START</div><div class="reset-btn">RESET</div></div>
+      <div class="col col-xs-4">
+        <span class="col-span">WORK:</span><br/>
+        <span class="col-span operatorW">+</span><br/>
+        <span class="col-span workT">25</span><br/>
+        <span class="col-span operatorW">-</span>
+      </div>
+    </div>
+  </div>
+  <%= javascript_include_tag "pomodoro.js" %>
+</div>

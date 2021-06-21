@@ -1,0 +1,71 @@
+// $color-lg: #ffb76b;
+
+body {
+  height: 100vh;
+  // background-color: lighten(#ffb76b, 12%);
+  font-family: "Raleway", sans-serif;
+  font-size: 1.2em;
+  // color: darken(#ffb76b, 40%);
+}
+.container {
+  padding-top: 30px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.wrap-time {
+  margin: 40px auto 15px;
+  padding-top: 20px;
+  width: 360px;
+  background: #ffb76b; /* Old browsers */
+  background: -moz-linear-gradient(
+    top,
+    #ffb76b 23%,
+    #ff7f04 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    #ffb76b 23%,
+    #ff7f04 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ffb76b 23%, #ff7f04 100%);
+  border-radius: 5px;
+  -webkit-box-shadow: 6px 6px 22px -9px rgba(0, 0, 0, 0.68);
+  -moz-box-shadow: 6px 6px 22px -9px rgba(0, 0, 0, 0.68);
+  box-shadow: 6px 6px 22px -9px rgba(0, 0, 0, 0.68);
+  text-align: center;
+  color: white;
+
+  .row {
+    margin: 0 auto 0;
+    padding: 30px 10px 30px;
+  }
+}
+// .col-span {
+//   cursor: pointer;
+//   heigth: 100%;
+// }
+.timer {
+  font-size: 7em;
+  cursor: pointer;
+}
+.start-btn,
+.reset-btn {
+  margin: 0px auto 20px;
+  cursor: pointer;
+  border: 1px solid white;
+  padding: 5px 15px;
+  border-radius: 5px;
+  &:hover {
+    background-color: white;
+    color: #ffb76b;
+  }
+}
+
+.copy {
+  color: darken(#ffb76b, 20%);
+  font-size: 0.8em;
+  a {
+    color: darken(#ffb76b, 40%);
+  }
+}
