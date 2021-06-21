@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
 
   def index
-    @tasks = Task.all
+    @tasks = current_user.tasks.all
   end
 
   def new
@@ -11,7 +11,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(task_params)
+    @task = current_user.tasks.build(task_params)
     if params[:back]
       render :new
     else
@@ -44,7 +44,7 @@ class TasksController < ApplicationController
 
   private
   def task_params
-    params.require(:task).permit(:title, :content, :time_limit, { label_ids: [] })
+    params.require(:task).permit(:title, :content, :time_limit, :user_id, { label_ids: [] } )
   end
 
   def set_task
