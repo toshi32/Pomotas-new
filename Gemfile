@@ -16,6 +16,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 gem 'devise-i18n'
 gem 'rails_admin', '~> 2.0'
+gem 'cancancan'
 #-------カリキュラム外の技術-------
 
 
