@@ -1,25 +1,29 @@
-<div class="container text-center">
-  <div class="wrapper">
-    <h5>POMODORO TIMER</h5>
-  </div>
-  <div class="wrap-time text-center">
-    <div class="msg">&nbsp;</div>
-    <div class="timer"><span class="minutes">25</span>:<span class="seconds">00</span></div>
-    <div class="row">
-      <div class="col col-xs-4">
-        <span class="col-span">BREAK:</span><br/>
-        <span class="col-span operatorB">+</span><br/>
-        <span class="col-span breakT">5</span><br/>
-        <span class="col-span operatorB">-</span>
+  <body>
+    <div id="maintitle" class="center">Pomodoro Timer</div>
+    <div id="timerbody" class="center">
+      <div id="cHolder" class="row">
+        <div class="inner_holder">
+        <div id="cBreak" class="col-xs-5">Break
+          <div class="row">
+            <button id="break_minus" class="col-xs-4 cbut">-</button>
+            <div id="break_view" class="col-xs-4">5</div>
+            <button id="break_plus" class="col-xs-4 cbut">+</button>
+          </div>
+        </div>
+          <div class="col-xs-2"></div>
+        <div id="cWork" class="col-xs-5 center">Work
+          <div class="row">
+            <button id="work_minus" class="col-xs-4 cbut">-</button>
+            <div id="work_view" class="col-xs-4">25</div>
+            <button id="work_plus" class="col-xs-4 cbut">+</button>
+          </div>
+        </div>
+          </div>
       </div>
-      <div class="col col-xs-4"><div class="start-btn">START</div><div class="reset-btn">RESET</div></div>
-      <div class="col col-xs-4">
-        <span class="col-span">WORK:</span><br/>
-        <span class="col-span operatorW">+</span><br/>
-        <span class="col-span workT">25</span><br/>
-        <span class="col-span operatorW">-</span>
+
+      <div id="clock" class="inactive">
+        25:00
       </div>
     </div>
-  </div>
   <%= javascript_include_tag "pomodoro.js" %>
-</div>
+  </body>
