@@ -15,6 +15,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 #-------就業 Term の技術-------
 gem 'devise'
 gem 'devise-i18n'
+gem 'rails_admin', '~> 2.0'
+gem 'cancancan'
 #-------カリキュラム外の技術-------
 
 
@@ -37,7 +39,6 @@ end
 
 group :test do
   gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
   #-------Rspec-------
   gem 'webdrivers'
 end
