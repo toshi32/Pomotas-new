@@ -13,6 +13,25 @@
   <%= label.name %>
   <% end %></p>
 
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <div class="task-text">
+    <p><strong>タイトル</strong>：<%= @task.title %></p>
+    <p><strong>内容</strong>：<%= @task.content %></p>
+  </div>
+  <p>コメント一覧（ここから下の内容が重要）</p>
+  <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->
+  <div id="comments_area">
+    <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
+    <%= render partial: 'comments/index', locals: { comments: @comments, task: @task } %>
+  </div>
+  <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
+  <%= render partial: 'comments/form', locals: { comment: @comment, task: @task } %>
+  <%= link_to '編集', edit_task_path(@task) %> |
+  <%= link_to '戻る', tasks_path %>
+</div>
+
+
 <td><%= link_to 'ポモドーロ', pomodoros_show_path %></td>
 
 <p><%= link_to 'Back', tasks_path(@task) %></p>
