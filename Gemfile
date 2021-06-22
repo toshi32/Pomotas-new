@@ -19,6 +19,11 @@ gem 'rails_admin', '~> 2.0'
 gem 'cancancan'
 #-------カリキュラム外の技術-------
 gem 'ransack'
+#-------その他のGem-------
+gem 'kaminari'
+gem 'bcrypt'
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

@@ -5,12 +5,13 @@
   <%= f.date_field :time_limit_gteq, include_blank: true, class: 'form-control' %>〜
   <%= f.date_field :time_limit_lteq, include_blank: true, class: 'form-control' %>
   <%= f.label :status %>
-  <%= f.select :status, Task.statuses.to_a.map{|s|[t("activerecord.enum.status.#{s[0]}"), "#{s[0]}"]} %>
+  <%= f.select :status_eq, Task.statuses.map{|s|[t("activerecord.enum.status.#{s[0]}"), "#{s[1]}"]} %>
   <% Label.all.each do |label| %>
     <%= f.check_box :labels_id_eq_any, { multiple: true, checked: label[:checked], disabled: label[:disabled], include_hidden: false }, label[:id] %>
     <label><%= label.name %></label>
   <% end %>
   <%= f.submit %>
+  <div><%= link_to '検索条件のクリア', request.path %></div>
 <% end%>
 
 <table>
@@ -30,4 +31,5 @@
   </tr>
   <% end %>
 </table>
+<%= paginate @tasks %>
 <%= link_to '新規作成', new_task_path %>

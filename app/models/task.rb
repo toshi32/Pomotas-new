@@ -6,13 +6,14 @@ class Task < ApplicationRecord
   has_many :labels, through: :labellings
   belongs_to :user
   validates :status, presence: true
-  enum status: { notyet: 0, done: 1 }
+  validates :status, inclusion: { in: %w(Notyet Done) }
+  enum status: { Notyet: 0, Done: 1 }
 
   def toggle_status!
-    if notyet?
-      done!
+    if Notyet?
+      Done!
     else
-      notyet!
+      Notyet!
     end
   end
 end
