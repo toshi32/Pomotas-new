@@ -11,5 +11,8 @@ Rails.application.routes.draw do
   resources :tasks do
     patch :toggle_status
   end
+  resources :tasks do
+    resources :comments
+  end
 
 end
