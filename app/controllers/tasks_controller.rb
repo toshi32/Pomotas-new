@@ -6,6 +6,7 @@ class TasksController < ApplicationController
     @q = current_user.tasks.ransack(params[:q])
     #@tasks = current_user.tasks.all
     @tasks = @q.result
+    #@tasks = @search.rescue(distinct: true)
   end
 
   def new
