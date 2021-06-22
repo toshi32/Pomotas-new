@@ -12,6 +12,7 @@
   <tr>
     <td><strong>タスク名</strong><%= task.title %></td>
     <td><strong>終了期限: </strong><%= l task.time_limit, format: :long %></td>
+    <td><strong>ステータス: </strong><%= task.status %></td>
     <td>
       <% task.labels.each do |label| %>
         <span><%= label.name %></span>

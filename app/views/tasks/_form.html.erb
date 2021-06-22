@@ -24,6 +24,10 @@
 <div class="field">
   <%= form.collection_check_boxes(:label_ids, Label.all, :id, :name) %>
 </div>
+<div class="task_title">
+  <%= form.label :status, "ステータス" %>
+  <%= form.select :status, ['notyet', 'done'] %>
+</div>
 <%= form.submit %>
 <% end %>
 <%= link_to "タスク一覧にもどる", tasks_path %>
