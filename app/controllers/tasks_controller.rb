@@ -3,7 +3,9 @@ class TasksController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
 
   def index
-    @tasks = current_user.tasks.all
+    @q = current_user.tasks.ransack(params[:q])
+    #@tasks = current_user.tasks.all
+    @tasks = @q.result
   end
 
   def new
