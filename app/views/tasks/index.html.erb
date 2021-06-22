@@ -4,6 +4,12 @@
   <%= f.label :time_limit %>
   <%= f.date_field :time_limit_gteq, include_blank: true, class: 'form-control' %>〜
   <%= f.date_field :time_limit_lteq, include_blank: true, class: 'form-control' %>
+  <%= f.label :status %>
+  <%= f.select :status, Task.statuses.to_a.map{|s|[t("activerecord.enum.status.#{s[0]}"), "#{s[0]}"]} %>
+  <% Label.all.each do |label| %>
+    <%= f.check_box :labels_id_eq_any, { multiple: true, checked: label[:checked], disabled: label[:disabled], include_hidden: false }, label[:id] %>
+    <label><%= label.name %></label>
+  <% end %>
   <%= f.submit %>
 <% end%>
 
@@ -12,6 +18,7 @@
   <tr>
     <td><strong>タスク名</strong><%= task.title %></td>
     <td><strong>終了期限: </strong><%= l task.time_limit, format: :long %></td>
+    <td><strong>ステータス:</strong><%=link_to task.status, task_toggle_status_path(task), method: :patch %></td>
     <td>
       <% task.labels.each do |label| %>
         <span><%= label.name %></span>

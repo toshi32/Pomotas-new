@@ -1,11 +1,12 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: [:show, :edit, :update, :destroy, :toggle_status]
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
 
   def index
     @q = current_user.tasks.ransack(params[:q])
     #@tasks = current_user.tasks.all
     @tasks = @q.result
+    #@tasks = @search.rescue(distinct: true)
   end
 
   def new
@@ -44,13 +45,19 @@ class TasksController < ApplicationController
     redirect_to tasks_path, notice:"タスクを削除しました。"
   end
 
+  def toggle_status
+    @task.toggle_status!
+    redirect_to tasks_path, notice: 'Task was successfully updated.'
+  end
+
   private
   def task_params
-    params.require(:task).permit(:title, :content, :time_limit, :user_id, { label_ids: [] } )
+    params.require(:task).permit(:title, :content, :time_limit, :user_id, { label_ids: [] }, :status )
   end
 
   def set_task
-    @task = Task.find(params[:id])
+    #@task = Task.find(params[:id])
+    @task = Task.find(params[:id] || params[:task_id])
   end
 
 end
