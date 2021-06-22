@@ -7,4 +7,12 @@ class Task < ApplicationRecord
   belongs_to :user
   validates :status, presence: true
   enum status: { notyet: 0, done: 1 }
+
+  def toggle_status!
+    if notyet?
+      done!
+    else
+      notyet!
+    end
+  end
 end

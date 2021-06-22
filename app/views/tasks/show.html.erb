@@ -5,8 +5,10 @@
 <p><%= safe_join(@task.content.split("\n"),tag(:br)) %></p>
 <p>終了期限</p>
 <p><%= @task.time_limit %></p>
-<p>ステータス</p>
-<p><%= @task.status %></p>
+<p>
+  <strong>Status:</strong>
+  <%= link_to @task.status, task_toggle_status_path(@task), method: :patch %>
+</p>
 <p><% @task.labels.each do |label| %>
   <%= label.name %>
   <% end %></p>

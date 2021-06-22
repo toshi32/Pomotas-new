@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
     post 'users/admin_guest_sign_in', to: 'users/sessions#new_admin_guest'
   end
-  resources :tasks
+  resources :tasks do
+    patch :toggle_status
+  end
 
 end
