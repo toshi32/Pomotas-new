@@ -21,7 +21,9 @@ gem 'cancancan'
 gem 'ransack'
 #-------その他のGem-------
 gem 'kaminari'
-gem 'kaminari-bootstrap', '~> 3.0.1'
+gem 'bcrypt'
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
