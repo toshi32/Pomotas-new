@@ -1,4 +1,4 @@
-<h1 class="main_h1">TOP PAGE</h1>
+<h1 class="main_h1">How To Use</h1>
 
   <div style="text-align: center;">
     <h1>pomotas</h1>
@@ -7,8 +7,10 @@
     <br>
     <div>
       <h3>≪お試しはこちらから≫</h3><br>
-    <%= link_to 'ゲストログイン（一般閲覧用）', users_guest_sign_in_path, method: :post %>
-    <%= link_to 'ゲストログイン（管理者閲覧用）', users_admin_guest_sign_in_path, method: :post %>
+      <div class = "gest_log_in">
+        <button type="button" class="btn btn-warning"><%= link_to 'ゲストログイン（一般閲覧用）', users_guest_sign_in_path, method: :post %></button>
+        <button type="button" class="btn btn-warning"><%= link_to 'ゲストログイン（管理者閲覧用）', users_admin_guest_sign_in_path, method: :post %></button>
+      </div>
     </div>
   <div>
 
