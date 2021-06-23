@@ -31,3 +31,58 @@
 .pagination > li > a:hover {
   border-radius: 15px; /*角を丸くする*/
 }
+
+header {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7d7e7d+0,0e0e0e+100;Black+3D */
+  background: rgb(125, 126, 125); /* Old browsers */
+  background: -moz-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(125, 126, 125, 1) 0%,
+    rgba(14, 14, 14, 1) 100%
+  ); /* FF3.6-15 */
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(125, 126, 125, 1) 0%,
+    rgba(14, 14, 14, 1) 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(
+    ellipse at center,
+    rgba(125, 126, 125, 1) 0%,
+    rgba(14, 14, 14, 1) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  color: #fff;
+}
+header .container {
+  padding: 10px;
+}
+footer {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7d7e7d+0,0e0e0e+100;Black+3D */
+  background: rgb(125, 126, 125); /* Old browsers */
+  background: -moz-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(125, 126, 125, 1) 0%,
+    rgba(14, 14, 14, 1) 100%
+  ); /* FF3.6-15 */
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(125, 126, 125, 1) 0%,
+    rgba(14, 14, 14, 1) 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(
+    ellipse at center,
+    rgba(125, 126, 125, 1) 0%,
+    rgba(14, 14, 14, 1) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px 10px;
+}
+footer p {
+  margin: 0;
+}
