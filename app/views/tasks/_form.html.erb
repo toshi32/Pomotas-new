@@ -11,23 +11,24 @@
 <% end %>
 <div class="task_title">
   <%= form.label :title,"タスク名" %>
-  <%= form.text_field :title %>
+  <%= form.text_field :title, class:"form-control" %>
 </div>
 <div class="task_title">
   <%= form.label :content,"内容" %>
-  <%= form.text_area :content %>
+  <%= form.text_area :content, class:"form-control" %>
 </div>
 <div class="task_title">
-  <%= form.label :time_limit, "終了期限" %>
-  <%= form.date_select :time_limit, include_blank: true, selected: Date.today %>
+  <%= form.label :time_limit, "期限" %>
+  <p><%= form.date_select :time_limit, include_blank: true, selected: Date.today %></p>
 </div>
-<div class="field">
+<div class="task_title">
+  <%= form.label :label, "ラベル" %><br>
   <%= form.collection_check_boxes(:label_ids, Label.all, :id, :name) %>
 </div>
 <div class="task_title">
-  <%= form.label :status, "ステータス" %>
+  <%= form.label :status, "ステータス" %><br>
   <%= form.label :status, 'Notyet' %>
 </div>
-<%= form.submit %>
+<%= form.submit class:"btn btn-outline-info"%>
 <% end %>
-<%= link_to "タスク一覧にもどる", tasks_path %>
+<button type="button" class="btn btn-outline-primary"><%= link_to "タスク一覧にもどる", tasks_path %></button>
