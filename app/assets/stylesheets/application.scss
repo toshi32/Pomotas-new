@@ -32,8 +32,17 @@
   border-radius: 15px; /*角を丸くする*/
 }
 
+body {
+  background-image: url(../images/0173_s.png);
+}
+
 header {
-  background: #f8b500;
+  // background: #f8b500;
+  background-image: image-url("woody.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  -moz-background-size: cover;
+  background-size: cover;
   color: #752100;
 }
 header a {
@@ -48,8 +57,16 @@ header h1 {
 header nav ul li {
   margin: 0 10px;
 }
+header .bg-light {
+  background: rgba(255, 255, 255, 0.6) !important;
+}
 footer {
-  background: #f8b500;
+  // background: #f8b500;
+  background-image: image-url("woody.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  -moz-background-size: cover;
+  background-size: cover;
   color: #752100;
   text-align: center;
   padding: 20px 10px 10px;
@@ -59,6 +76,10 @@ footer p {
 }
 .main_content {
   padding: 40px 0;
+  background-image: image-url("notepage.png");
+  background-position: center top;
+  // background-repeat: no-repeat;
+  background-size: 1280px auto;
 }
 .main_content .main_h1 {
   font-size: 1.5em; /* フォントサイズ */

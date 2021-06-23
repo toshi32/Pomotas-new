@@ -4,13 +4,22 @@
 .top_flex {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 30px;
-  border: 1px solid #ccc;
+  border: 5px solid rgb(0, 0, 0);
 }
 .top_flex .item {
   width: 49%;
   padding: 10px;
 }
+.top_flex .right .img {
+  text-align: center;
+}
+.top_flex .right img {
+  width: 80%;
+  height: auto;
+}
+
 // .top_flex .left {
 // }
 // .top_flex .right {
