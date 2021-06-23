@@ -17,38 +17,42 @@
   <body>
     <header>
       <div class="container">
-        <% if current_user.try(:admin?) %>
-          <h1>管理者ユーザー</h1>
-        <% else %>
-          <h1>一般ユーザー</h1>
-        <% end %>
-        <% if user_signed_in? %>
-          <% if current_user.try(:admin?) %>
-            <%= link_to "管理画面", admin_users_path %>
+        <h1>Pomotas</h1>
+        <div class="menu">
+          <% if user_signed_in? %>
+            <% if current_user.admin? %>
+              <%= link_to "管理画面", rails_admin_path %>
+            <% end %>
+            <%= link_to "Task List", tasks_path %>
+            <%= link_to "My Page", user_path(current_user.id) %>
+            <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+            <%= link_to "Back to Top", root_path %>
+          <% else %>
+            <%= link_to "Sign Up", new_user_registration_path %>
+            <%= link_to "Log In", new_user_session_path %>
+            <%= link_to "Back to Top", root_path %>
           <% end %>
-          <%= link_to "Task List", tasks_path %>
-          <%= link_to "My Page", user_path(current_user.id) %>
-          <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
-          <%= link_to "Back to Top", root_path %>
-        <% else %>
-          <%= link_to "Sign Up", new_user_registration_path %>
-          <%= link_to "Log In", new_user_session_path %>
-        <% end %>
-
-        <% if notice %>
-          <p class="alert alert-notice"><%= notice %></p>
-        <% end %>
-        <% if alert %>
-          <p class="alert alert-error"><%= alert %></p>
-        <% end %>
+        </div>
       </div>
     </header>
     <div class="container">
-    <%= yield %>
+      <% if current_user.try(:admin?) %>
+        <p>管理者ユーザー</p>
+      <% else %>
+        <p>一般ユーザー</p>
+      <% end %>
+      <% if notice %>
+        <p class="alert alert-notice"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-error"><%= alert %></p>
+      <% end %>
+      <%= yield %>
     </div>
     <footer>
       <div class="container">
-        <p>コピーライトが入ったりするといいかも</p>
+        <% date = Time.new %>
+          <p class="copyright"><small>&#169; <%= date.year.to_s %> Pomotas All Rights Reserved.</small></p>
       </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -5,13 +5,13 @@ class Users::SessionsController < Devise::SessionsController
   def guest_sign_in
     user = User.guest
     sign_in user
-    redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
+    redirect_to tasks_path, notice: 'ゲストユーザーとしてログインしました。'
   end
 
   def new_admin_guest
     guest_user = User.admin_guest
     sign_in guest_user   # ユーザーをログインさせる
-    redirect_to root_path, notice: 'ログインしました。(管理者ゲスト)'
+    redirect_to tasks_path, notice: 'ログインしました。(管理者ゲスト)'
   end
 
   # before_action :configure_sign_in_params, only: [:create]
