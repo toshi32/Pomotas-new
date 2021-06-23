@@ -15,7 +15,8 @@ var timerTime = workTime * 60;
 var timerInterval = 0;
 var timerClock;
 
-var alarmSound = new Audio('http://demo.tutorialzine.com/2015/04/material-design-stopwatch-alarm-and-timer/assets/06_Urban_Beat.mp3');
+// var alarmSound = new Audio('https://afternoon-gorge-25326.herokuapp.com/gong.mp3');
+var alarmSound = new Audio('http://localhost:3000/gong.mp3');
 
 workPlus.on('click', function(e){
   if (workTime < 60){
