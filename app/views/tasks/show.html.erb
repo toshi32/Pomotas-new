@@ -19,7 +19,7 @@
     <p><strong>タイトル</strong>：<%= @task.title %></p>
     <p><strong>内容</strong>：<%= @task.content %></p>
   </div>
-  <p>コメント一覧（ここから下の内容が重要）</p>
+  <p>コメント一覧</p>
   <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->
   <div id="comments_area">
     <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
@@ -30,4 +30,5 @@
   <%= link_to '編集', edit_task_path(@task) %> |
   <%= link_to '戻る', tasks_path %>
 </div>
+<p><%= link_to 'ポモる？', pomodoros_show_path %></p>
 <p><%= link_to 'Back', tasks_path(@task) %></p>
