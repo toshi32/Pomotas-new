@@ -19,14 +19,14 @@
 </div>
 <div class="task_title">
   <%= form.label :time_limit, "終了期限" %>
-  <%= form.date_select :time_limit, value: Time.zone.now %>
+  <%= form.date_ :time_limit, include_blank: true, selected: Date.today %>
 </div>
 <div class="field">
   <%= form.collection_check_boxes(:label_ids, Label.all, :id, :name) %>
 </div>
 <div class="task_title">
   <%= form.label :status, "ステータス" %>
-  <%= form.select :status, ['Notyet', 'Done'] %>
+  <%= form.label :status, 'Notyet' %>
 </div>
 <%= form.submit %>
 <% end %>
