@@ -19,7 +19,7 @@
 </div>
 <div class="task_title">
   <%= form.label :time_limit, "終了期限" %>
-  <%= form.date_ :time_limit, include_blank: true, selected: Date.today %>
+  <%= form.date_select :time_limit, include_blank: true, selected: Date.today %>
 </div>
 <div class="field">
   <%= form.collection_check_boxes(:label_ids, Label.all, :id, :name) %>
