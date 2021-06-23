@@ -33,56 +33,39 @@
 }
 
 header {
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7d7e7d+0,0e0e0e+100;Black+3D */
-  background: rgb(125, 126, 125); /* Old browsers */
-  background: -moz-radial-gradient(
-    center,
-    ellipse cover,
-    rgba(125, 126, 125, 1) 0%,
-    rgba(14, 14, 14, 1) 100%
-  ); /* FF3.6-15 */
-  background: -webkit-radial-gradient(
-    center,
-    ellipse cover,
-    rgba(125, 126, 125, 1) 0%,
-    rgba(14, 14, 14, 1) 100%
-  ); /* Chrome10-25,Safari5.1-6 */
-  background: radial-gradient(
-    ellipse at center,
-    rgba(125, 126, 125, 1) 0%,
-    rgba(14, 14, 14, 1) 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  color: #fff;
+  background: #f8b500;
+  color: #752100;
+}
+header a {
+  color: #752100;
 }
 header .container {
   padding: 10px;
 }
+header h1 {
+  margin-right: 20px;
+}
+header nav ul li {
+  margin: 0 10px;
+}
 footer {
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7d7e7d+0,0e0e0e+100;Black+3D */
-  background: rgb(125, 126, 125); /* Old browsers */
-  background: -moz-radial-gradient(
-    center,
-    ellipse cover,
-    rgba(125, 126, 125, 1) 0%,
-    rgba(14, 14, 14, 1) 100%
-  ); /* FF3.6-15 */
-  background: -webkit-radial-gradient(
-    center,
-    ellipse cover,
-    rgba(125, 126, 125, 1) 0%,
-    rgba(14, 14, 14, 1) 100%
-  ); /* Chrome10-25,Safari5.1-6 */
-  background: radial-gradient(
-    ellipse at center,
-    rgba(125, 126, 125, 1) 0%,
-    rgba(14, 14, 14, 1) 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  color: #fff;
+  background: #f8b500;
+  color: #752100;
   text-align: center;
   padding: 20px 10px 10px;
 }
 footer p {
   margin: 0;
+}
+.main_content {
+  padding: 40px 0;
+}
+.main_content .main_h1 {
+  font-size: 1.5em; /* フォントサイズ */
+  font-weight: bold; /* フォント太さ */
+  padding: 0.5em;
+  margin-bottom: 2em;
+  border-radius: 15px; /* 角丸 */
+  border: 3px solid #752100;
+  color: #752100; /* フォント色 */
 }
