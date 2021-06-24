@@ -1,15 +1,127 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.box14 {
+.task_list {
   padding: 0.2em 0.5em;
   margin: 2em 0;
-  background: #d6ebff;
-  box-shadow: 0px 0px 0px 10px #d6ebff;
+  background: #fef263;
+  box-shadow: 0px 0px 0px 10px #fef263;
   border: dashed 2px white;
+  justify-content: space-between;
 }
-.box14 td {
+
+.task_list span {
   flex: auto;
   margin: 0;
-  padding: 0;
+  padding: 0 5px;
+  vertical-align: middle;
+}
+
+.task_action input[type="submit"] {
+  position: relative;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #fff;
+  background: #fd9535; /*色*/
+  border-radius: 4px; /*角の丸み*/
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+  border: solid 2px #d27d00; /*線色*/
+  outline: none;
+}
+
+.task_action input[type="submit"]:hover {
+  /*押したとき*/
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  opacity: 0.6;
+}
+
+.search_action input[type="submit"] {
+  position: relative;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #fff;
+  background: #fd9535; /*色*/
+  border-radius: 4px; /*角の丸み*/
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+  border: solid 2px #d27d00; /*線色*/
+  outline: none;
+}
+
+.search_action input[type="submit"]:hover {
+  /*押したとき*/
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  opacity: 0.6;
+}
+
+.index_pomodoros_show a {
+  font-size: 0;
+}
+.index_pomodoros_show a::before {
+  content: "play_circle_outline";
+  font-family: "Material Icons";
+  font-size: 20px;
+  vertical-align: middle;
+}
+.index_tasks_show a {
+  font-size: 0;
+}
+.index_tasks_show a::before {
+  content: "description";
+  font-family: "Material Icons";
+  font-size: 20px;
+  vertical-align: middle;
+}
+.index_tasks_edit a {
+  font-size: 0;
+}
+.index_tasks_edit a::before {
+  content: "edit_note";
+  font-family: "Material Icons";
+  font-size: 20px;
+  vertical-align: middle;
+}
+.index_tasks_delete a {
+  font-size: 0;
+}
+.index_tasks_delete a::before {
+  content: "delete_outline";
+  font-family: "Material Icons";
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.link_color {
+  color: black;
+}
+
+.comment_list li p {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.comment_list li .content {
+  margin-right: 20px;
+}
+
+.comment_list li {
+  border: 1px solid #fef263;
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.task_details {
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  color: #232323;
+  background: #fff8e8;
+  border-left: solid 10px #ffc06e;
 }
