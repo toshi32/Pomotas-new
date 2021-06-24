@@ -25,10 +25,10 @@
           <span><%= label.name %></span>
         <% end %>
       </span>
-      <span class="pomodoros_show"><%= link_to 'ポモる？', pomodoros_show_path %></span>
-      <span class="tasks_show"><%= link_to '詳細', task_path(task.id) %></span>
-      <span class="tasks_edit"><%= link_to '編集', edit_task_path(task.id), data: { confirm: '本当に編集していいですか？' } %></span>
-      <span class="tasks_delete"><%= link_to '削除', task_path(task.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></span>
+      <span class="index_pomodoros_show"><%= link_to 'ポモる？', pomodoros_show_path %></span>
+      <span class="index_tasks_show"><%= link_to '詳細', task_path(task.id) %></span>
+      <span class="index_tasks_edit"><%= link_to '編集', edit_task_path(task.id), data: { confirm: '本当に編集していいですか？' } %></span>
+      <span class="index_tasks_delete"><%= link_to '削除', task_path(task.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></span>
     </div>
   <% end %>
 </table>

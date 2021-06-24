@@ -7,6 +7,7 @@
   background: #d6ebff;
   box-shadow: 0px 0px 0px 10px #d6ebff;
   border: dashed 2px white;
+  justify-content: space-between;
 }
 .box14 span {
   flex: auto;
@@ -35,11 +36,38 @@
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
   opacity: 0.6;
 }
-.pomodoros_show a {
+.index_pomodoros_show a {
   font-size: 0;
 }
-.pomodoros_show a::before {
-  content: "smart_display";
+.index_pomodoros_show a::before {
+  content: "play_circle_outline";
+  font-family: "Material Icons";
+  font-size: 20px;
+  vertical-align: middle;
+}
+.index_tasks_show a {
+  font-size: 0;
+}
+.index_tasks_show a::before {
+  content: "description";
+  font-family: "Material Icons";
+  font-size: 20px;
+  vertical-align: middle;
+}
+.index_tasks_edit a {
+  font-size: 0;
+}
+.index_tasks_edit a::before {
+  content: "edit_note";
+  font-family: "Material Icons";
+  font-size: 20px;
+  vertical-align: middle;
+}
+.index_tasks_delete a {
+  font-size: 0;
+}
+.index_tasks_delete a::before {
+  content: "delete_outline";
   font-family: "Material Icons";
   font-size: 20px;
   vertical-align: middle;
