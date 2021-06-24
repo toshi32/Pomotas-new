@@ -1,18 +1,23 @@
-<h1>タスク詳細画面</h1>
-<p>タスク名</p>
-<p><%= @task.title %></p>
-<p>内容</p>
-<p><%= safe_join(@task.content.split("\n"),tag(:br)) %></p>
-<p>終了期限</p>
-<p><%= @task.time_limit %></p>
-<p>
-  <strong>Status:</strong>
-  <%= link_to @task.status, task_toggle_status_path(@task), method: :patch %>
-</p>
-<p><% @task.labels.each do |label| %>
-  #
-  <%= label.name %>
-  <% end %></p>
+<h1 class="main_h1">タスク詳細画面</h1>
+
+<div class="task_details">
+  <strong>タスク名</strong>
+  <p><%= @task.title %></p>
+  <strong>内容</strong>
+  <p><%= safe_join(@task.content.split("\n"),tag(:br)) %></p>
+  <strong>終了期限</strong>
+  <p><%= @task.time_limit %></p>
+  <strong>
+    <strong>Status:</strong>
+    <%= link_to @task.status, task_toggle_status_path(@task), method: :patch %>
+  </p>
+  <strong><% @task.labels.each do |label| %>
+    #
+    <%= label.name %>
+    <% end %></strong>
+</div>
+
+
 <p><%= link_to 'ポモドーロ', pomodoros_show_path %></p>
 
 <div class="container">

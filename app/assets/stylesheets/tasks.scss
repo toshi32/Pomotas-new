@@ -13,7 +13,7 @@
 .task_list span {
   flex: auto;
   margin: 0;
-  padding: 0;
+  padding: 0 5px;
   vertical-align: middle;
 }
 
@@ -98,4 +98,30 @@
 
 .link_color {
   color: black;
+}
+
+.comment_list li p {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.comment_list li .content {
+  margin-right: 20px;
+}
+
+.comment_list li {
+  border: 1px solid #fef263;
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.task_details {
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  color: #232323;
+  background: #fff8e8;
+  border-left: solid 10px #ffc06e;
 }
