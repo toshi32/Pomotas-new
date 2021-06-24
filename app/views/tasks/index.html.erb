@@ -9,14 +9,18 @@
     <%= f.check_box :labels_id_eq_any, { multiple: true, checked: label[:checked], disabled: label[:disabled], include_hidden: false }, label[:id] %>
     <label><%= label.name %></label>
   <% end %><br>
-  <th><%= f.submit %></th>
-  <th><%= link_to '検索条件のクリア', request.path, class: "link_color"  %></th>
+  <div class="search_action">
+    <th><%= f.submit %></th>
+    <th><%= link_to '検索条件のクリア', request.path, class:"btn btn-warning" %></th>
+  </div>
+
 <% end%>
 
 <%= paginate @tasks %>
 
+<table>
   <% @tasks.each do |task| %>
-    <div class="box14">
+    <div class="task_list">
       <span><strong>タスク名</strong><%= task.title %></span>
       <span><strong>終了期限: </strong><%= l task.time_limit, format: :long %></span>
       <span><strong>ステータス:</strong><%=link_to task.status, task_toggle_status_path(task), method: :patch %></span>
@@ -33,4 +37,4 @@
   <% end %>
 </table>
 <%= paginate @tasks %>
-<%= link_to '新規作成', new_task_path, class: "link_color"  %></a>
+<%= link_to '新規作成', new_task_path, class: "link_color", class:"btn btn-warning" %></a>
