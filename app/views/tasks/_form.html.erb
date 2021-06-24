@@ -11,11 +11,11 @@
 <% end %>
 <div class="task_title">
   <%= form.label :title,"タスク名" %>
-  <%= form.text_field :title, class:"form-control" %>
+  <%= form.text_field :title%>
 </div>
 <div class="task_title">
   <%= form.label :content,"内容" %>
-  <%= form.text_area :content, class:"form-control" %>
+  <%= form.text_area :content %>
 </div>
 <div class="task_title">
   <%= form.label :time_limit, "期限" %>
@@ -29,6 +29,6 @@
   <%= form.label :status, "ステータス" %><br>
   <%= form.label :status, 'Notyet' %>
 </div>
-<%= form.submit class:"btn btn-outline-info"%>
+<%= form.submit %>
 <% end %>
-<button type="button" class="btn btn-outline-primary"><%= link_to "タスク一覧にもどる", tasks_path %></button>
+<%= link_to "タスク一覧にもどる", tasks_path %>
