@@ -29,6 +29,9 @@
   <%= form.label :status, "ステータス" %><br>
   <%= form.label :status, 'Notyet' %>
 </div>
-<%= form.submit %>
+<div class="task_action">
+  <%= form.submit %>
+</div>
 <% end %>
 <%= link_to "タスク一覧にもどる", tasks_path %>
+
