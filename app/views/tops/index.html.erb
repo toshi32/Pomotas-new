@@ -6,10 +6,12 @@
     <h2>ポモドーロとタスクリストを組み合わせた作業効率推進アプリ</h2>
     <br>
     <div>
-      <h3>≪お試しはこちらから≫</h3><br>
-      <div class = "gest_log_in">
-        <button type="button" class="btn btn-warning"><%= link_to 'ゲストログイン（一般閲覧用）', users_guest_sign_in_path, method: :post %></button>
-        <button type="button" class="btn btn-warning"><%= link_to 'ゲストログイン（管理者閲覧用）', users_admin_guest_sign_in_path, method: :post %></button>
+      <h3>≪お試しはこちらから≫</h3>
+      <div class="box13">
+        <p><%= link_to 'ゲストログイン（一般閲覧用）', users_guest_sign_in_path, method: :post, class: "link_color" %></p>
+      </div>
+      <div class="box13">
+        <p><%= link_to 'ゲストログイン（管理者閲覧用）', users_admin_guest_sign_in_path, method: :post, class: "link_color" %><p>
       </div>
     </div>
   <div>
