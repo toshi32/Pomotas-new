@@ -2,36 +2,35 @@
 
 <%= search_form_for @q do |f| %>
   <%= f.label :time_limit %>
-  <%= f.date_field :time_limit_gteq, include_blank: true, class: 'form-control' %>〜
-  <%= f.date_field :time_limit_lteq, include_blank: true, class: 'form-control' %>
+  <%= f.date_field :time_limit_gteq, include_blank: true %>〜<%= f.date_field :time_limit_lteq, include_blank: true %>
   <%= f.label :status %>
-  <%= f.select :status_eq, Task.statuses.map{|s|[t("activerecord.enum.status.#{s[0]}"), "#{s[1]}"]} %>
+  <%= f.select :status_eq, Task.statuses.map{|s|[t("activerecord.enum.status.#{s[0]}"), "#{s[1]}"]} %><br>
   <% Label.all.each do |label| %>
     <%= f.check_box :labels_id_eq_any, { multiple: true, checked: label[:checked], disabled: label[:disabled], include_hidden: false }, label[:id] %>
     <label><%= label.name %></label>
-  <% end %>
-  <%= f.submit %>
-  <div><%= link_to '検索条件のクリア', request.path %></div>
+  <% end %><br>
+  <th><%= f.submit %></th>
+  <th><%= link_to '検索条件のクリア', request.path %></th>
 <% end%>
 
 <%= paginate @tasks %>
-<table>
+
   <% @tasks.each do |task| %>
-  <tr>
-    <td><strong>タスク名</strong><%= task.title %></td>
-    <td><strong>終了期限: </strong><%= l task.time_limit, format: :long %></td>
-    <td><strong>ステータス:</strong><%=link_to task.status, task_toggle_status_path(task), method: :patch %></td>
-    <td>
-      <% task.labels.each do |label| %>
-        <span><%= label.name %></span>
-      <% end %>
-    </td>
-    <td><%= link_to 'ポモる？', pomodoros_show_path %></td>
-    <td><%= link_to '詳細', task_path(task.id) %></td>
-    <td><%= link_to '編集', edit_task_path(task.id), data: { confirm: '本当に編集していいですか？' } %></td>
-    <td><%= link_to '削除', task_path(task.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
-  </tr>
+    <div class="box14">
+        <td><strong>タスク名</strong><%= task.title %></td>
+        <td><strong>終了期限: </strong><%= l task.time_limit, format: :long %></td>
+        <td><strong>ステータス:</strong><%=link_to task.status, task_toggle_status_path(task), method: :patch %></td>
+        <td>
+          <% task.labels.each do |label| %>
+            <span><%= label.name %></span>
+          <% end %>
+        </td>
+        <td><li><%= link_to 'ポモる？', pomodoros_show_path %></li></td>
+        <td><%= link_to '詳細', task_path(task.id) %></td>
+        <td><%= link_to '編集', edit_task_path(task.id), data: { confirm: '本当に編集していいですか？' } %></td>
+        <td><%= link_to '削除', task_path(task.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
+    </div>
   <% end %>
 </table>
 <%= paginate @tasks %>
-<%= link_to '新規作成', new_task_path %>
+<%= link_to '新規作成', new_task_path %></a>
