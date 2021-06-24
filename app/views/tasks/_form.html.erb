@@ -11,15 +11,15 @@
 <% end %>
 <div class="task_title">
   <%= form.label :title,"タスク名" %>
-  <%= form.text_field :title%>
+  <%= form.text_field :title, class:"form-control"%>
 </div>
 <div class="task_title">
   <%= form.label :content,"内容" %>
-  <%= form.text_area :content %>
+  <%= form.text_area :content, class:"form-control" %>
 </div>
-<div class="task_title">
+<div class="form-group">
   <%= form.label :time_limit, "期限" %>
-  <p><%= form.date_select :time_limit, include_blank: true, selected: Date.today %></p>
+  <p><%= form.date_field :time_limit, value: Time.now.strftime("%Y-%m-%d"), class:'form-control' %></p>
 </div>
 <div class="task_title">
   <%= form.label :label, "ラベル" %><br>
@@ -30,8 +30,9 @@
   <%= form.label :status, 'Notyet' %>
 </div>
 <div class="task_action">
-  <%= form.submit %>
+  <th><%= form.submit %></th>
+  <th><%= link_to "タスク一覧にもどる", tasks_path, class:"btn btn-warning"  %></th>
 </div>
 <% end %>
-<%= link_to "タスク一覧にもどる", tasks_path, class: "link_color" %>
+
 
