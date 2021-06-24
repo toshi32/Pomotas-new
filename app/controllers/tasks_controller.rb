@@ -49,7 +49,7 @@ class TasksController < ApplicationController
 
   def toggle_status
     @task.toggle_status!
-    redirect_to tasks_path, notice: 'Task was successfully updated.'
+    redirect_to tasks_path, notice: 'ステータスを更新しました。'
   end
 
   private
