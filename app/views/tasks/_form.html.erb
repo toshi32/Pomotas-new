@@ -1,0 +1,38 @@
+<%= form_with(model: @task, local: true ) do |form| %>
+<% if @task.errors.any? %>
+<div id="error_explanation">
+  <h2><%= @task.errors.count %>件のエラーがあります。</h2>
+  <ul>
+    <% @task.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<div class="task_title">
+  <%= form.label :title,"タスク名" %>
+  <%= form.text_field :title, class:"form-control"%>
+</div>
+<div class="task_title">
+  <%= form.label :content,"内容" %>
+  <%= form.text_area :content, class:"form-control" %>
+</div>
+<div class="form-group">
+  <%= form.label :time_limit, "期限" %>
+  <p><%= form.date_field :time_limit, value: Time.now.strftime("%Y-%m-%d"), class:'form-control' %></p>
+</div>
+<div class="task_title">
+  <%= form.label :label, "ラベル" %><br>
+  <%= form.collection_check_boxes(:label_ids, Label.all, :id, :name) %>
+</div>
+<div class="task_title">
+  <%= form.label :status, "ステータス" %><br>
+  <%= form.label :status, 'Notyet' %>
+</div>
+<div class="task_action">
+  <th><%= form.submit %></th>
+  <th><%= link_to "タスク一覧にもどる", tasks_path, class:"btn btn-warning"  %></th>
+</div>
+<% end %>
+
+

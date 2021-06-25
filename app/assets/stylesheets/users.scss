@@ -1,0 +1,45 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.actions input[type="submit"] {
+  position: relative;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #fff;
+  background: #fd9535; /*色*/
+  border-radius: 4px; /*角の丸み*/
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+  border: solid 2px #d27d00; /*線色*/
+  outline: none;
+}
+
+.actions input[type="submit"]:hover {
+  /*押したとき*/
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  opacity: 0.6;
+}
+
+.actions_cancel input[type="submit"] {
+  position: relative;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #fff;
+  background: #fd9535; /*色*/
+  border-radius: 4px; /*角の丸み*/
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+  border: solid 2px #d27d00; /*線色*/
+  outline: none;
+}
+
+.actions input[type="submit"]:hover {
+  /*押したとき*/
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  opacity: 0.6;
+}

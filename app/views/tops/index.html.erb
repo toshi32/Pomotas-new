@@ -1,2 +1,52 @@
-<h1>Tops#index</h1>
-<p>Find me in app/views/tops/index.html.erb</p>
+<h1 class="main_h1">How To Use</h1>
+
+  <div style="text-align: center;">
+    <h1>pomotas</h1>
+    <h1>作業効率向上を目指す</h1>
+    <h2>ポモドーロとタスクリストを組み合わせた作業効率推進アプリ</h2>
+    <br>
+    <div>
+      <h3>≪お試しはこちらから≫</h3>
+      <div class="box13">
+        <p><%= link_to 'ゲストログイン（一般閲覧用）', users_guest_sign_in_path, method: :post, class: "link_color" %></p>
+      </div>
+      <div class="box13">
+        <p><%= link_to 'ゲストログイン（管理者閲覧用）', users_admin_guest_sign_in_path, method: :post, class: "link_color" %><p>
+      </div>
+    </div>
+  <div>
+
+<div class="top_flex">
+  <div class="item left">
+    <h5>タスクを登録して、ポモドーロタイマーをスタート！！</h5>
+    <p>タスク内容と終了日を入力してタスクを登録</p>
+    <p>タスクを登録したら、再生▶︎ボタンを押してポモドーページへGO！！</p>
+    <p>時計を押して25分間作業に集中してください</p>
+    <p>※1分～60分までWork(作業時間)とBreak(休憩時間)をアレンジOK</p>
+  </div>
+  <div class="item right"><p class="img"><%= image_tag "alarm-clock.png" %></p></div>
+</div>
+
+<div class="top_flex">
+  <div class="item left">
+    <h5>タイマーが完了したら音でお知らせ</h5>
+    <p>タイマーが終わると音でお知らせします。</p>
+    <p>Work(作業時間)の時間が完了したら</p>
+    <p>Break(休憩時間)が５分間の休憩タイマーがスタート</p>
+    <p>時間にメリハリを持たせてレッツ全集中！！</p>
+  </div>
+  <div class="item right"><p class="img"><%= image_tag "megaphone.png" %></p></div>
+</div>
+
+<div class="top_flex">
+  <div class="item left">
+    <h5>気づいた事をコメントでメモできます</h5>
+    <p>読んでいた本、勉強、仕事での気付き、出先の発見</p>
+    <p>些細な事でもメモしてください。</p>
+    <p>もしかした次の貴方の【何か】に繋がるかも。。</p>
+    <small>心の叫びでも良いですよ(笑)</small>
+  </div>
+  <div class="item right"><p class="img"><%= image_tag "memo.png" %></p></div>
+</div>
+
+

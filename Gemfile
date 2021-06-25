@@ -12,9 +12,27 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
+#-------就業 Term の技術-------
+gem 'devise'
+gem 'devise-i18n'
+gem 'rails_admin', '~> 2.0'
+gem 'cancancan'
+#-------カリキュラム外の技術-------
+gem 'ransack'
+#-------その他のGem-------
+gem 'kaminari'
+gem 'bcrypt'
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  #-------Rspec-------
+  gem 'rspec-rails'
+  gem 'spring-commands-rspec'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'launchy'
 end
 
 group :development do
@@ -22,12 +40,13 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
 end
 
 group :test do
   gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
-  gem 'chromedriver-helper'
+  #-------Rspec-------
+  gem 'webdrivers'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
