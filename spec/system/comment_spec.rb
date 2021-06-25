@@ -24,13 +24,7 @@ RSpec.describe 'ラベル登録機能', type: :system do
       it "コメントを編集する" do
         fill_in "comment[content]", with: "test_comment"
         click_on "登録する"
-        # contact = Contact.find_by(test_comment:)
-        # first('ul ui div p').click_link '編集'
-        # find('.edit').click
-        # binding.irb
         click_link "編集", href: edit_task_comment_path(task, comment)
-        # click_link "編集", href: "/tasks/" + (task.id).to_s + "/comments/" + (comment.id).to_s + "/edit"
-        # href="/tasks/16/comments/11/edit"
         fill_in "comment[content]", with: "test"
         click_on "更新する"
         expect(page).to have_content "test"
@@ -38,14 +32,8 @@ RSpec.describe 'ラベル登録機能', type: :system do
     end
     context "コメント削除について", js: true do
       it "コメントを削除する" do
-        # contact = Contact.find_by(test_comment:)
-        # first('ul ui div p').click_link '編集'
-        # find('.edit').click
-        # binding.irb
         click_link "削除", href: task_comment_path(comment.task_id, comment.id)
-        #click_link "削除", href: "/tasks/" + (task.id).to_s + "/comments/" + (comment.id).to_s
         page.driver.browser.switch_to.alert.accept
-        # href="/tasks/16/comments/11/edit"
         expect(page).to have_content "コメントが削除されました"
       end
     end
