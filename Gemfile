@@ -27,6 +27,12 @@ gem 'jquery-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  #-------Rspec-------
+  gem 'rspec-rails'
+  gem 'spring-commands-rspec'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'launchy'
 end
 
 group :development do
@@ -34,12 +40,7 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  #-------Rspec-------
-  gem 'rspec-rails'
-  gem 'spring-commands-rspec'
-  gem 'factory_bot_rails'
-  gem 'faker'
-  gem 'launchy'
+
 end
 
 group :test do
