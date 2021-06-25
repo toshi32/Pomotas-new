@@ -4,9 +4,7 @@ class TasksController < ApplicationController
 
   def index
     @q = current_user.tasks.ransack(params[:q])
-    #@tasks = current_user.tasks.all
-    @tasks = @q.result.page(params[:page]).per(5)
-    #@tasks = @search.rescue(distinct: true)
+    @tasks = @q.result.order(created_at: :desc).page(params[:page]).per(5)
   end
 
   def new
