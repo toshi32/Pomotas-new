@@ -1,7 +1,3 @@
-/*Reference:
-http://demo.tutorialzine.com/2015/04/material-design-stopwatch-alarm-and-timer/
-*/
-
 var workTime = 25;
 var breakTime = 5;
 var timerClock = $('#clock');
@@ -15,7 +11,7 @@ var timerTime = workTime * 60;
 var timerInterval = 0;
 var timerClock;
 
-var alarmSound = new Audio('https://afternoon-gorge-25326.herokuapp.com/gong.mp3');
+var alarmSound = new Audio('https://lit-beach-52312.herokuapp.com/gong.mp3');
 // var alarmSound = new Audio('http://localhost:3000/gong.mp3');
 
 workPlus.on('click', function(e){
@@ -47,7 +43,6 @@ breakMinus.on('click', function(e){
     $('#break_view').empty().append(breakTime);
   }
 });
-// Clicking on the clock.
 timerClock.on('click',function(e){
     if(timerClock.hasClass('inactive')){
         if(timerTime>0) {
@@ -62,10 +57,8 @@ timerClock.on('click',function(e){
 
 function startTimer() {
 
-    // Prevent multiple intervals going on at the same time.
     clearInterval(timerInterval);
 
-    // Every 1000ms (1 second) decrease the set time until it reaches 0.
     timerInterval = setInterval(function () {
         timerTime--;
             timerClock.text(returnFormattedToSeconds(timerTime));
@@ -78,18 +71,15 @@ function startTimer() {
         }
     }, 1000);
 
-    //timerInput.prop('disabled', true);
     timerClock.removeClass('inactive');
     timerClock.addClass('work-time');
 }
 
 function startBreakTimer() {
 
-    // Prevent multiple intervals going on at the same time.
     clearInterval(timerInterval);
     timerTime = breakTime * 60;
 
-    // Every 1000ms (1 second) decrease the set time until it reaches 0.
     timerInterval = setInterval(function () {
         timerTime--;
         timerClock.text(returnFormattedToSeconds(timerTime));
@@ -102,7 +92,6 @@ function startBreakTimer() {
         }
     }, 1000);
 
-    //timerInput.prop('disabled', true);
     timerClock.removeClass('inactive');
     timerClock.addClass('break-time');
 }
@@ -111,12 +100,9 @@ function startBreakTimer() {
 function pauseTimer(){
     clearInterval(timerInterval);
 
-    //timerInput.prop('disabled', false);
     timerClock.addClass('inactive');
 }
 
-// Reset the clock with the previous valid time.
-// Useful for setting the same alarm over and over.
 function resetTimer(){
     pauseTimer();
     if(timerClock.hasClass('break-time')){
