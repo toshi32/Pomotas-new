@@ -20,19 +20,19 @@
 <table>
   <% @tasks.each do |task| %>
     <div class="task_list">
-      <div class="task.row">
-      <span><strong>タスク名</strong><%= task.title %></span>
-      <span><strong>終了期限: </strong><%= l task.time_limit, format: :long %></span>
-      <span><strong>ステータス:</strong><%=link_to task.status, task_toggle_status_path(task), method: :patch %></span>
-      <span class="labels">
-        <% task.labels.each do |label| %>
-          <span>#<%= label.name %></span>
-        <% end %>
-      </span>
-      <span class="index_pomodoros_show"><%= link_to 'ポモる？', pomodoros_show_path %></span>
-      <span class="index_tasks_show"><%= link_to '詳細', task_path(task.id) %></span>
-      <span class="index_tasks_edit"><%= link_to '編集', edit_task_path(task.id) %></span>
-      <span class="index_tasks_delete"><%= link_to '削除', task_path(task.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></span>
+      <div class="task_row">
+        <span><strong>タスク名</strong><%= task.title %></span>
+        <span><strong>終了期限: </strong><%= l task.time_limit, format: :long %></span>
+        <span><strong>ステータス:</strong><%=link_to task.status, task_toggle_status_path(task), method: :patch %></span>
+        <span class="labels">
+          <% task.labels.each do |label| %>
+            <span>#<%= label.name %></span>
+          <% end %>
+        </span>
+        <span class="index_pomodoros_show"><%= link_to 'ポモドーロ？', pomodoros_show_path %></span>
+        <span class="index_tasks_show"><%= link_to '詳細', task_path(task.id) %></span>
+        <span class="index_tasks_edit"><%= link_to '編集', edit_task_path(task.id) %></span>
+        <span class="index_tasks_delete"><%= link_to '削除', task_path(task.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></span>
       </div>
     </div>
   <% end %>
