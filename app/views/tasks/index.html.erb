@@ -5,9 +5,9 @@
   <%= f.date_field :time_limit_gteq, include_blank: true %>〜<%= f.date_field :time_limit_lteq, include_blank: true %>
   <%= f.label :status %>
   <%= f.select :status_eq, Task.statuses.map{|s|[t("activerecord.enum.status.#{s[0]}"), "#{s[1]}"]} %><br>
-  <% Label.all.each do |label| %>
+  <% Label.all.each_with_index do |label, i| %>
     <%= f.check_box :labels_id_eq_any, { multiple: true, checked: label[:checked], disabled: label[:disabled], include_hidden: false }, label[:id] %>
-    <label><%= label.name %></label>
+    <label for=<%="q_labels_id_eq_any_#{i + 1}" %>><%= label.name %></label>
   <% end %><br>
   <div class="search_action">
     <th><%= f.submit %></th>
