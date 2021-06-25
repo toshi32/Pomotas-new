@@ -64,6 +64,8 @@ RSpec.describe User, type: :model do
       end
     end
   end
+
+
   describe '管理者権限機能' do
     context '管理者権限がある場合' do
       it 'ユーザ-の作成・編集・削除ができる' do
