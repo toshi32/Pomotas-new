@@ -10,6 +10,7 @@ RSpec.describe 'Task関連機能',type: :system do
     fill_in "user[email]", with: "user1@example.com"
     fill_in "user[password]", with: "password1"
     click_on 'ログイン'
+    sleep(0.5)
     visit tasks_path
   end
   describe 'Task 新規作成' do
@@ -51,7 +52,6 @@ RSpec.describe 'Task関連機能',type: :system do
     context '作成したタスクを削除する場合' do
       it '投稿したタスクを削除する' do
         first(:link, '削除').click
-        page.driver.browser.switch_to.alert.accept
         task_list = all('.task_row')
         expect(task_list[0]).to have_content 'task2'
       end
@@ -76,8 +76,8 @@ RSpec.describe 'Task関連機能',type: :system do
   describe '検索機能' do
     context '終了期限で検索した場合' do
       it '該当タスクが表示される' do
-        fill_in "q[time_limit_gteq]" ,with: '08-01'
-        fill_in "q[time_limit_lteq]" ,with: '08-08'
+        fill_in "q[time_limit_gteq]" ,with: '2021,8,1'
+        fill_in "q[time_limit_lteq]" ,with: '2021,8,8'
         click_on '検索'
         expect(page).to have_content 'task2'
       end
@@ -91,8 +91,8 @@ RSpec.describe 'Task関連機能',type: :system do
     end
     context '終了日とラベルで検索した場合' do
       it '該当タスクが表示される' do
-        fill_in "q[time_limit_gteq]" ,with: '08-01'
-        fill_in "q[time_limit_lteq]" ,with: '08-08'
+        fill_in "q[time_limit_gteq]" ,with: '2021,8,1'
+        fill_in "q[time_limit_lteq]" ,with: '2021,8,8'
         select "Notyet", from: :q_status_eq
         click_on '検索'
         expect(page).to have_content 'task2'
