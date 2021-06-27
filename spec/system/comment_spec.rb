@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'ラベル登録機能', type: :system do
+RSpec.describe 'コメント機能', type: :system do
   let(:user) { FactoryBot.create(:user) }
   let!(:task) { FactoryBot.create(:task, user_id: user.id) }
   let!(:comment) {FactoryBot.create(:comment, task_id: task.id)}
@@ -10,7 +10,7 @@ RSpec.describe 'ラベル登録機能', type: :system do
     fill_in "user[email]", with: "user1@example.com"
     fill_in "user[password]", with: "password1"
     click_on 'ログイン'
-    visit tasks_path
+    # visit tasks_path
     visit task_path(task.id)
     end
     context "コメント新規投稿について", js: true do
