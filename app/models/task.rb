@@ -1,6 +1,6 @@
 class Task < ApplicationRecord
-  validates :title, presence: true, length: { in: 1..100 }
-  validates :content, presence: true, length: { in: 1..100 }
+  validates :title, presence: true, length: { in: 1..50 }
+  validates :content, presence: true
   validates :time_limit, presence: true
   validate :date_check
   def date_check

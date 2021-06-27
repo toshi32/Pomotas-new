@@ -11,7 +11,7 @@ RSpec.describe 'Task関連機能',type: :system do
     fill_in "user[password]", with: "password1"
     click_on 'ログイン'
     sleep(0.5)
-    visit tasks_path
+    # visit tasks_path
   end
   describe 'Task 新規作成' do
     context 'タスクを新規作成した場合' do
@@ -89,7 +89,7 @@ RSpec.describe 'Task関連機能',type: :system do
         expect(page).to have_content 'task'
       end
     end
-    context '終了日とラベルで検索した場合' do
+    context '終了日とステータスで検索した場合' do
       it '該当タスクが表示される' do
         fill_in "q[time_limit_gteq]" ,with: '2021,8,1'
         fill_in "q[time_limit_lteq]" ,with: '2021,8,8'
