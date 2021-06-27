@@ -61,4 +61,29 @@ RSpec.describe 'User関連機能',type: :system do
       end
     end
   end
+  describe '管理者権限機能テスト' do
+    let!(:user) { FactoryBot.create(:user)}
+    let!(:user2) { FactoryBot.create(:user2)}
+    before do
+      click_on 'ゲストログイン（管理者閲覧用）'
+      click_on('管理画面')
+    end
+    context '管理者画面で編集ボタンを押した時' do
+      it '該当ユーザーを編集できる' do
+      first('.nav-pills').find_link('ユーザー').click
+      find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(9)').find(".list-inline").find_link('編集').click
+      find_by_id("user_email").set "hensyuu@docomo.ne.jp"
+      click_button '保存'
+      expect(page).to have_content 'ユーザーの更新に成功しました'
+      end
+    end
+    context '管理者画面で削除ボタンを押した時' do
+      it '該当ユーザーを削除できる' do
+      first('.nav-pills').find_link('ユーザー').click
+      find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(2) td:nth-child(9)').find(".list-inline").find_link('削除').click
+      click_button '実行する'
+      expect(page).to have_content 'ユーザーの削除に成功しました'
+      end
+    end
+  end
 end
