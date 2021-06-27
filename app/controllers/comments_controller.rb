@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   before_action :set_task, only: [:create, :edit, :update]
 
   def create
+    @task = Task.find(params[:task_id])
     @comment = @task.comments.build(comment_params)
     respond_to do |format|
       if @comment.save
