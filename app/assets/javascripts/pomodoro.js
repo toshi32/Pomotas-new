@@ -1,3 +1,9 @@
+/*
+Copyright (c) 2021 by Amanze Ogbonna
+Released under the MIT license
+(https://codepen.io/darlingtonamz/pen/pgyqMz)
+*/
+
 var workTime = 25;
 var breakTime = 5;
 var timerClock = $('#clock');
