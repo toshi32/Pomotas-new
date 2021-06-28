@@ -1,6 +1,7 @@
 /*
 Copyright (c) December 19, 2015 by Amanze Ogbonna
 Released under the MIT license
+http://opensource.org/licenses/mit-license.php
 (https://codepen.io/darlingtonamz/pen/pgyqMz)
 */
 
