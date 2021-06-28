@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy, :toggle_status]
-  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:show, :new, :edit, :update, :destroy, :index]
 
   def index
     @q = current_user.tasks.ransack(params[:q])
@@ -36,6 +36,8 @@ class TasksController < ApplicationController
   end
 
   def show
+    @task = Task.find_by(id: params[:id])
+    @user = User.find_by(id: @task.user_id)
     @comments = @task.comments
     @comment = @task.comments.build
   end
