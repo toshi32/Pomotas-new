@@ -11,13 +11,13 @@ class Task < ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
   validates :status, presence: true
-  validates :status, inclusion: { in: %w(Notyet Done) }
-  enum status: { Notyet: 0, Done: 1 }
+  validates :status, inclusion: { in: %w(やってないよ やったよ) }
+  enum status: { やってないよ: 0, やったよ: 1 }
   def toggle_status!
-    if Notyet?
-      Done!
+    if やってないよ?
+      やったよ!
     else
-      Notyet!
+      やってないよ!
     end
   end
 end
