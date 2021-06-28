@@ -66,6 +66,10 @@ footer {
   color: #752100;
   text-align: center;
   padding: 20px 10px 10px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
 }
 footer p {
   margin: 0;
@@ -76,6 +80,13 @@ footer p {
   background-position: center top;
   // background-repeat: no-repeat;
   background-size: 1280px auto;
+  height: 100vh;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.main_content::-webkit-scrollbar {
+  display: none;
 }
 .main_content .main_h1 {
   font-size: 1.5em; /* フォントサイズ */
