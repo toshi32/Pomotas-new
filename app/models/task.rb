@@ -2,7 +2,7 @@ class Task < ApplicationRecord
   validates :title, presence: true, length: { in: 1..50 }
   validates :content, presence: true
   validates :time_limit, presence: true
-  validate :date_check
+  validate :date_check, on: :create
   def date_check
     errors.add(:time_limit, '過去の日付は入力できません') if time_limit.nil? || time_limit < Date.today
   end

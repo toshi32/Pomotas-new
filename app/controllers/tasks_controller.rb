@@ -5,6 +5,7 @@ class TasksController < ApplicationController
   def index
     @q = current_user.tasks.ransack(params[:q])
     @tasks = @q.result.order(created_at: :desc).page(params[:page]).per(5)
+    @task_list = Task.where("task.time_limit > ?", DateTime.now).reorder(:time_limit)
   end
 
   def new
@@ -52,6 +53,7 @@ class TasksController < ApplicationController
 
   def toggle_status
     @task.toggle_status!
+    @task.save
     redirect_to tasks_path, notice: 'ステータスを更新しました。'
   end
 
