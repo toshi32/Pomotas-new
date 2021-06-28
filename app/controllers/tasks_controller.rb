@@ -1,10 +1,11 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy, :toggle_status]
-  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:show, :new, :edit, :update, :destroy, :index]
 
   def index
     @q = current_user.tasks.ransack(params[:q])
     @tasks = @q.result.order(created_at: :desc).page(params[:page]).per(5)
+    @task_list = Task.where("task.time_limit > ?", DateTime.now).reorder(:time_limit)
   end
 
   def new
@@ -36,8 +37,13 @@ class TasksController < ApplicationController
   end
 
   def show
+    @task = Task.find_by(id: params[:id])
+    @user = User.find_by(id: @task.user_id)
     @comments = @task.comments
     @comment = @task.comments.build
+    unless @task.user_id == current_user.id
+      redirect_to tasks_path, notice: '無効な操作が行われました'
+    end
   end
 
   def destroy
@@ -47,6 +53,7 @@ class TasksController < ApplicationController
 
   def toggle_status
     @task.toggle_status!
+    @task.save
     redirect_to tasks_path, notice: 'ステータスを更新しました。'
   end
 
