@@ -84,7 +84,7 @@ RSpec.describe 'Task関連機能',type: :system do
     end
     context 'ステータスで検索した場合' do
       it '該当タスクが表示される' do
-        select "Done", from: :q_status_eq
+        select "やったよ", from: :q_status_eq
         click_on '検索'
         expect(page).to have_content 'task'
       end
@@ -93,7 +93,7 @@ RSpec.describe 'Task関連機能',type: :system do
       it '該当タスクが表示される' do
         fill_in "q[time_limit_gteq]" ,with: '2021,8,1'
         fill_in "q[time_limit_lteq]" ,with: '2021,8,8'
-        select "Notyet", from: :q_status_eq
+        select "やってないよ", from: :q_status_eq
         click_on '検索'
         expect(page).to have_content 'task2'
       end

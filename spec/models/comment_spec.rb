@@ -6,13 +6,13 @@ RSpec.describe Comment, type: :model do
   describe "バリデーションのテスト" do
     context "コメントが1文字以上の場合", js: true do
       it "バリデーションが通る" do
-        comment = Comment.new(content: '成功テスト', task: task )
+        comment = Comment.new(content: '成功テスト', task: task, user: user )
         expect(comment).to be_valid
       end
     end
     context 'コメントを空欄で登録しようとした場合', js: true do
       it 'バリデーションにひっかかる' do
-        comment = Comment.new(content: '', task: task )
+        comment = Comment.new(content: '', task: task, user: user )
         expect(comment).not_to be_valid
       end
     end

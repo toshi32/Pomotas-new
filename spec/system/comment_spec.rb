@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'コメント機能', type: :system do
   let(:user) { FactoryBot.create(:user) }
   let!(:task) { FactoryBot.create(:task, user_id: user.id) }
-  let!(:comment) {FactoryBot.create(:comment, task_id: task.id)}
+  let!(:comment) {FactoryBot.create(:comment, task_id: task.id, user_id: user.id)}
   describe "コメント機能について" do
     before do
     visit new_user_session_path
