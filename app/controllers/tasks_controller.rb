@@ -40,6 +40,9 @@ class TasksController < ApplicationController
     @user = User.find_by(id: @task.user_id)
     @comments = @task.comments
     @comment = @task.comments.build
+    unless @task.user_id == current_user.id
+      redirect_to tasks_path
+    end
   end
 
   def destroy
