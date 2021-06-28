@@ -41,7 +41,7 @@ class TasksController < ApplicationController
     @comments = @task.comments
     @comment = @task.comments.build
     unless @task.user_id == current_user.id
-      redirect_to tasks_path
+      redirect_to tasks_path, notice: '無効な操作が行われました'
     end
   end
 
