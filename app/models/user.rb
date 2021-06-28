@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   has_many :tasks, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|

@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
   def create
     @task = Task.find(params[:task_id])
     @comment = @task.comments.build(comment_params)
+    @comment.user_id = current_user.id
     respond_to do |format|
       if @comment.save
         format.js { render :index }
@@ -45,7 +46,7 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comment).permit(:task_id, :content)
+    params.require(:comment).permit(:task_id, :content, :user_id)
   end
   def set_task
     @task = Task.find(params[:task_id])
